@@ -1,0 +1,207 @@
+/* home.css */
+
+/* Cor de fundo geral e fontes */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #2f2f2f; /* Fundo escuro */
+    color: #f0f0f0; /* Texto claro para contraste */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.5rem;
+    color: #4caf50; /* Cor verde suave */
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Subtítulo */
+h2 {
+    font-size: 1.2rem;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Formulário de entrada */
+form {
+    background-color: #333; /* Fundo escuro para o formulário */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form button {
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para os campos de input */
+input[type="text"],
+input[type="date"] {
+    background-color: #444; /* Cor de fundo escura */
+    color: #fff; /* Texto claro */
+    border: 1px solid #555; /* Borda escura */
+    padding: 0.75rem;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border: 1px solid #4caf50; /* Borda verde ao focar */
+    background-color: #555;
+}
+
+/* Estilo do botão */
+button[type="submit"] {
+    background-color: #4caf50; /* Cor verde */
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Cor verde escura ao passar o mouse */
+}
+
+/* Estilo da lista de pessoas */
+.pessoas {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2b2a2a;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    height: fit-content;
+    max-height: 550px;
+    overflow: auto;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pessoa {
+    background-color: #333; /* Cartões com fundo escuro */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 25%;
+    text-align: center;
+    min-width: 100px;
+}
+
+.pessoa p.nome {
+    font-size: 1.5rem;
+    color: #4caf50; /* Nome em verde */
+    font-weight: bold;
+    margin: 0;
+}
+
+.pessoa p.dataAniversario {
+    color: #bbb; /* Texto de data mais suave */
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.pessoa form button {
+    background-color: #dc3545; /* Botão vermelho para excluir */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pessoa form button:hover {
+    background-color: #c82333; /* Cor vermelha escura ao passar o mouse */
+}
+
+/* Estilo para o "aniversariandoHoje" */
+.aniversariandoHoje {
+    background-color: #ffcc00; /* Amarelo vibrante */
+    color: #333;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#procurarNomes {
+    display: block;
+    width: 100%;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+/* Estilo do link de logout */
+a {
+    color: #4caf50; /* Cor verde para o link */
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form input,
+    form button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .pessoa p.nome {
+        font-size: 1.3rem;
+    }
+}
+
+/* Para dispositivos móveis (telas menores que 576px) */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .pessoa {
+        padding: 0.75rem;
+    }
+
+    .pessoa p.nome {
+        font-size: 1.1rem;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

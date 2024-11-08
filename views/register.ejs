@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="/css/register.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form action="/register" method="post">
+                <input
+                    type="text"
+                    name="usuario"
+                    id="usuario"
+                    placeholder="Usuário"
+                />
+                <input
+                    type="password"
+                    name="senha"
+                    id="senha"
+                    placeholder="Senha"
+                />
+                <input
+                    type="password"
+                    name="senhaC"
+                    id="senhaC"
+                    placeholder="Confirmar senha"
+                />
+                <button type="submit">Criar conta</button>
+                <% if (userExist) { %>
+                <p>Usuário já existe</p>
+                <% } %>
+            </form>
+            <a href="/login">Entrar na minha conta</a>
+        </div>
+    </body>
+</html>

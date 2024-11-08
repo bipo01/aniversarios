@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista de Aniversariantes</title>
+        <link rel="stylesheet" href="/css/home.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form action="/add" method="post">
+                <input
+                    type="text"
+                    name="pessoa"
+                    id="pessoa"
+                    placeholder="Nome"
+                />
+                <label for="dataaniver">Data de nascimento:</label>
+                <input type="date" name="dataaniver" id="dataaniver" />
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <div class="aniversariandoHoje hidden"></div>
+
+            <div class="pessoas">
+                <% if (data.length > 0) { %>
+                <input
+                    type="search"
+                    name="procurarNomes"
+                    id="procurarNomes"
+                    placeholder="Procurar pessoa"
+                />
+                <% data.forEach(el => { %>
+                <div class="pessoa">
+                    <p class="nome"><%=el.pessoa%></p>
+                    <p class="dataAniversario">
+                        <%=el.dataaniver.toLocaleString("pt-br",
+                        {year:"numeric", month:"numeric", day:"numeric"})%>
+                    </p>
+                    <form action="/delete" method="post">
+                        <input
+                            type="hidden"
+                            name="idAtual"
+                            value="<%= el.id %>"
+                        />
+                        <button type="submit">Excluir</button>
+                    </form>
+                </div>
+                <% }) %> <% } %>
+            </div>
+
+            <a href="/logout">Sair da conta</a>
+        </div>
+
+        <script src="/js/home.js"></script>
+    </body>
+</html>
