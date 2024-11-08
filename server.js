@@ -10,15 +10,15 @@ import path from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
-
-app.use(express.static(path.join(__dirname, "public")));
-
 env.config();
 
 const app = express();
 const port = 3000;
+
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, "public")));
 
 const db = new pg.Client({
     connectionString: process.env.PG_URL,
